@@ -1,4 +1,4 @@
-USE MSBA56
+USE Aluso -----Specifies the database to use
 ----First dimensional table
 CREATE TABLE DimCustomer(
 CustomerKey INT PRIMARY KEY NOT NULL,
