@@ -1,4 +1,5 @@
 --KPI Use Cases
+-- How many times has each video been watched?
 SELECT 
 	dv.VideoName,
 	COUNT(*)AS TotalViews 
@@ -10,7 +11,7 @@ WHERE
 	VideoWatched=1
 GROUP BY 
 	VideoName
---Question 2
+--What are the top 10 most-watched videos?
 SELECT	
 	Top(10) dv.VideoName,
 	COUNT(*)AS TotalViews 
@@ -24,7 +25,7 @@ GROUP BY
 	VideoName
 ORDER BY 
 	TotalViews DESC
-----Question 3
+-- what is the average rating for each video that was watched?
 SELECT 
 	dv.VideoName,
 	AVG(dr.RatingValue) AS AverageRatingValue 
@@ -40,7 +41,7 @@ GROUP BY
 	VideoName
 ORDER BY 
 	VideoName
---- Question 4
+-- Which videos had the trailer being watched without the full video being watched?
 SELECT 
 	dv.VideoName,
 	dv.VideoID 
@@ -52,7 +53,7 @@ WHERE
 	VideoWatched=0 AND TrailerWatched=1
 GROUP BY 
 	VideoName,VideoID
----Question 5
+-- How many times has each video featuring Dwayne John been watched?
 SELECT 
 	dv.VideoName,
 	dv.VideoID,
@@ -156,3 +157,4 @@ ORDER BY
 
 
 		
+
